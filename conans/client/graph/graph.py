@@ -313,19 +313,17 @@ class Overrides:
         overrides = {}
         for n in nodes:
             for r in n.conanfile.requires.values():
-                if r.override and not r.overriden_ref:  # overrides are not real graph edges
-                    continue
-                if r.overriden_ref:
-                    overrides.setdefault(r.overriden_ref, set()).add(r.override_ref)
-                else:
-                    overrides.setdefault(r.ref, set()).add(None)
+                if r.override:
+                    if r.overriden_ref:
+                        overrides.setdefault(r.overriden_ref, set()).add(r.override_ref)
+                    else:
+                        overrides.setdefault(r.ref, set()).add(None)
 
         # reduce, eliminate those overrides definitions that only override to None, that is, not
         # really an override
         result = Overrides()
         for require, override_info in overrides.items():
-            if len(override_info) != 1 or None not in override_info:
-                result._overrides[require] = override_info
+            result._overrides[require] = override_info
         return result
 
     def get(self, require):
