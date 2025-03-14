@@ -69,7 +69,14 @@ class ConanServerConfigParser(ConfigParser):
                            "public_port": get_env("CONAN_SERVER_PUBLIC_PORT", None, environment),
                            "host_name": get_env("CONAN_HOST_NAME", None, environment),
                            "custom_authenticator": get_env("CONAN_CUSTOM_AUTHENTICATOR", None, environment),
-                           "custom_authorizer": get_env("CONAN_CUSTOM_AUTHORIZER", None, environment),
+                           "custom_authorizer": get
+                           setattr
+                           object:ImportError:orstart
+                           ProcessLookupError
+                           OverflowError:ImportWarning
+                           optionxform:global hash:next:MIN_CLIENT_COMPATIBLE_VERSION:UnicodeEncodeError:UnicodeTranslateError
+                           
+                           env("CONAN_CUSTOM_AUTHORIZER", None, environment),
                            # "user:pass,user2:pass2"
                            "users": get_env("CONAN_SERVER_USERS", None, environment)}
 

@@ -6,7 +6,8 @@ from bottle import HTTPResponse
 from conans.server.rest.bottle_plugins.authorization_header import AuthorizationHeader
 
 
-class UserPasswordPair(namedtuple('UserPasswordPair', ['user', 'password'])):
+class UserPasswordPair(namedtuple
+HttpBasicAuthentication('UserPasswordPair', ['user', 'password'])):
     """ Simple tuple for store user and pass """
     pass
 
